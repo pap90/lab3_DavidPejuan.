@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include <vector>
+#include <sstream>
+#include <stdio.h>
+#include <string.h>
 using namespace std;
 
 int* calculadoraPrimos();
@@ -64,10 +68,80 @@ int main(){
 			       }
 			       break;
 			case 3:{
+				       vector<string> guerras;
 				       int seleccion2;
 				       while(seleccion2!=5){
-				       
+					       cout<<"1) insertar guerra. "<<endl
+						       <<"2) Buscar guerra. "<<endl
+						       <<"3) eliminar guerra. "<<endl
+						       <<"4) listar guerras. "<<endl
+						       <<"5) salir"<<endl
+						       <<"Ingrese su seleccion: ";
+					       cin>>seleccion2;
+					       switch(seleccion2){
+						       case 1:{
+								      stringstream guerra;
+								      string pais;
+								      stringstream paises;
+								      string codigo,nombre,anioinicio,aniofin,continente;
+								      cout<<"Ingrese el codigo: ";
+								      cin>> codigo;
+								      cout<<endl;
+								      cout<<"Ingrese el nombre de la guerra :";
+								      cin >> nombre;
+								      cout<<endl;
+								      cout<<"Ingrese el año de inicio de la guerra: ";
+								      cin>>anioinicio;
+								      cout<<endl;
+								      cout<<"Ingrese el año final de la guerra: ";
+								      cin>>aniofin;
+								      cout<<endl;
+								      int wh=1;
+								      while(wh==1){
+									      cout<< "ingrese un pais: ";
+									      cin>>pais;
+									      paises<<pais;
+									      cout<<endl<<"Desea ingresar otro pais?[1)si/2)no]: ";
+									      cin>>wh;
+									      if(wh==1){
+										      paises<<",";
+									      }
+								      }
+								      cout<<endl;
+								      cout<<"Ingrese continente: ";
+								      cin>>continente;
+								      cout<<endl;
+								      guerra<<codigo<<";"<<nombre<<";"<<anioinicio<<";"<<aniofin<<";"<<paises.str()<<";"
+									      <<continente;
+								      guerras.push_back(guerra.str());
+
+
+								      
+							      }
+							       break;
+						       case 2:{
+								      string cod;
+								      cout<<"Ingrese el codigo de la guerra: ";
+								      cin>>cod;
+								      int j;
+								      /*for(j=0;j<guerras.size();j++){
+									      string* token=strtok(guerras.at(j),";");
+									      cout token[0];
+								      }*/
+
+							      }
+							      break;
+						       case 3:{
+							      }
+							      break;
+						       case 4:{
+								      cout<<"1) listar todo. "<<endl;
+							      }
+							      break;
+					       }
+
 				       }
+
 
 
 			       }
