@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cstring>
 using namespace std;
 
 int* calculadoraPrimos();
@@ -63,8 +64,12 @@ int main(){
 			       }
 			       break;
 			case 3:{
+				       int seleccion2;
+				       while(seleccion2!=5){
+				       
+				       }
 
-			       
+
 			       }
 			       break;
 		}
